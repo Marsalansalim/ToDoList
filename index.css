@@ -1,0 +1,175 @@
+:root {
+	--dark: #1E293B;      /* dark slate */
+	--darker: #0F172A;    /* deep navy */
+	--darkest: #020617;   /* almost black */
+	--grey: #94A3B8;      /* cool grey */
+	--teal: #06B6D4;      /* bright teal */
+	--blue: #3B82F6;      /* vibrant blue */
+	--purple: #8B5CF6;    /* soft violet */
+	--light: #F1F5F9;     /* near-white */
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira Sans", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: var(--light);
+	background-color: var(--dark);
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1 { 
+	font-size: 2.5rem;
+	font-weight: 300;
+	color: var(--grey);
+	margin-bottom: 1rem;
+}
+
+#new-task-form {
+	display: flex;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	background-color: var(--darker);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: var(--light);
+	font-size: 1.25rem;
+	transition: 0.3s;
+}
+
+#new-task-input::placeholder {
+	color: var(--grey);
+}
+
+#new-task-input:focus {
+	border: 2px solid var(--teal);
+	background-color: var(--darkest);
+}
+
+#new-task-submit {
+	color: var(--teal);
+	font-size: 1.25rem;
+	font-weight: 700;
+	background-image: linear-gradient(to right, var(--teal), var(--blue), var(--purple));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	cursor: pointer;
+	transition: 0.4s;
+}
+
+#new-task-submit:hover {
+	opacity: 0.8;
+	transform: scale(1.05);
+}
+
+#new-task-submit:active {
+	opacity: 0.6;
+	transform: scale(0.98);
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: var(--grey);
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--darkest);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+	transition: all 0.3s ease-in-out;
+}
+
+#tasks .task:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 20px rgba(6, 182, 212, 0.2);
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	color: var(--light);
+	font-size: 1.125rem;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color: var(--teal);
+}
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.3s;
+}
+
+.task .actions button:hover {
+	opacity: 0.8;
+	transform: scale(1.1);
+}
+
+.task .actions button:active {
+	opacity: 0.6;
+	transform: scale(0.95);
+}
+
+.task .actions .edit {
+	background-image: linear-gradient(to right, var(--teal), var(--blue));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.task .actions .delete {
+	color: #EF4444;
+}
